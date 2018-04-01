@@ -1,0 +1,29 @@
+<style>
+    .todoitem {
+        margin-bottom: 1em;
+    }
+    .todo-title {
+        padding: 0.5em 1em;
+        background-color: #e0e0e0;
+        border: 1px solid #888;
+    }
+    .todo-body {
+        padding: 0.5em 1em;
+        background-color: #f0f0f0;
+        border: 1px solid #888;
+        border-top: none;
+    }
+</style>
+
+<div class='todoitem'>
+  <div class='todo-title'>
+    <span>{{$ctrl.taskname}}</span>
+    <button class='close'>&times;</button>
+  </div>
+  <div class='todo-body'>
+    <p>Time: <span>{{$ctrl.tasktime}}</span></p>
+    <p>Location: <span>{{$ctrl.tasklocation}}</span></p>
+    <p>Note: <span>{{$ctrl.tasknote}}</span></p>
+  </div>
+</div>
+

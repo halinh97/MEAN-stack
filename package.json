@@ -1,0 +1,20 @@
+{
+  "scripts": {
+    "serve": "pushstate-server ./ 8080"
+  },
+  "dependencies": {
+    "@uirouter/angularjs": "^1.0.6",
+    "angular": "^1.6.5",
+    "angular-cookies": "^1.6.5",
+    "angular-md5": "^0.1.10",
+    "angular-modal-service": "^0.12.1",
+    "angular-ui-bootstrap": "^2.5.0",
+    "angular-ui-utils": "^0.1.1",
+    "bootstrap": "^3.3.7",
+    "express": "^4.16.3",
+    "font-awesome": "^4.7.0",
+    "jquery": "^3.2.1"
+  },
+  "author": "linh",
+  "license": "ISC"
+}
