@@ -1,24 +1,19 @@
-var moduleName = 'shopItem';
+var moduleName = 'shopList';
 var componentName = moduleName;
 
 angular.module(moduleName, [])
   .component(componentName, {
     templateUrl: componentTemplateFileName(moduleName, componentName),
     controller: Controller,
-    controllerAs: '$ctrl',
-    bindings: {
-      id: "<",
-      name: "<",
-      offer: "<",
-      img: "<",
-      tag: "<",
-      calo: "<"
-    }
+    controllerAs: '$ctrl'
   });
 
-function Controller($http, $scope) {
+function Controller($http) {
   var self = this;
-
+   $http.get('app/components/data.json')
+      .then(function(res) {
+      self.shopList = res.data;
+      });
 }
 
 function componentTemplateFileName(moduleName, componentName) {

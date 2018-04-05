@@ -1,36 +1,47 @@
 app.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
-    //
-    // For any unmatched url, redirect to error
-    $urlRouterProvider.otherwise("error");
-    //
-    // Now set up the states
+    $urlRouterProvider.otherwise("/");
     $stateProvider
 
         .state('home', {
             url: '',
-            //  authenticate: true,
-            // abstract: true,
             views: {
                 "": {
-                    // controller: 'ContractSectionController',
                     templateUrl: 'app/homeView.html'
                 },
             }
         })
-        .state('home.khoemoingay', {
+        .state('home.healthy-every-day', {
             url: "/",
-            //  authenticate: true,
             views: {
                 "": {
-                    templateUrl: 'app/components/khoemoingay/khoeView.html',
-                    controller: 'khoeCtrl'
+                    templateUrl: 'app/components/healthy-every-day/healthy-every-dayView.html',
+                    controller: 'HealthyEveryDayCtrl'
                 }
             }
 
         })
+        .state('home.nutrition', {
+            url: "/nutrition",
+            views: {
+                "": {
+                    templateUrl: 'app/components/nutrition/nutritionView.html',
+                    controller: 'NutritionCtrl'
+                }
+            }
+
+        })
+        .state('home.add-product', {
+            url: "/add-product",
+            views: {
+                "": {
+                    templateUrl: 'app/components/nutrition/add-productView.html',
+                    controller: 'NutritionCtrl'
+                }
+            }
+        })
         .state('home.strong', {
             url: "/bb",
-            redirectTo: 'home.khoimoingay'
+            redirectTo: 'home.healthy-every-day'
         })
 
         .state('error', {

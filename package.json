@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "serve": "pushstate-server ./ 8080"
+    "start": "node ./server/app.js"
   },
   "dependencies": {
     "@uirouter/angularjs": "^1.0.6",
@@ -13,7 +13,9 @@
     "bootstrap": "^3.3.7",
     "express": "^4.16.3",
     "font-awesome": "^4.7.0",
-    "jquery": "^3.2.1"
+    "jquery": "^3.2.1",
+    "mongoose": "^5.0.12",
+    "nodemon": "^1.17.3"
   },
   "author": "linh",
   "license": "ISC"

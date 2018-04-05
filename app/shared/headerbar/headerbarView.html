@@ -1,22 +1,16 @@
 <header class="main-header">
     <div class="agileits_header">
         <div class="w3l_offers">
-            <a ui-sref="#">Món gì hôm nay</a>
+            <a ui-sref="#">What is today?</a>
         </div>
         <div class="w3l_search">
             <form action="#" method="post">
-                <input type="text" name="Product" value="Tìm kiếm" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Tìm kiếm';}" required="">
+                <input type="text" name="Product" value="Search" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Tìm kiếm';}" required="">
                 <input type="submit" value=" ">
             </form>
         </div>
         <div class="product_list_header">
-            <form action="#" method="post" class="last">
-                <fieldset>
-                    <input type="hidden" name="cmd" value="_cart" />
-                    <input type="hidden" name="display" value="1" />
-                    <input type="submit" name="submit" value="Thực đơn" class="button" />
-                </fieldset>
-            </form>
+            <input type="button" value="Menu" ng-click="headerbarCtrl.showModal()"class="button"/>
         </div>
         <div class="w3l_header_right">
             <ul>
@@ -25,8 +19,8 @@
                     <div class="mega-dropdown-menu">
                         <div class="w3ls_vegetables">
                             <ul class="dropdown-menu drp-mnu">
-                                <li><a ui-sref="login.html">Đăng nhập</a></li>
-                                <li><a ui-sref="login.html">Đăng ký</a></li>
+                                <li><a ui-sref="">Login</a></li>
+                                <li><a ui-sref="">Signin</a></li>
                             </ul>
                         </div>
                     </div>
@@ -34,7 +28,7 @@
             </ul>
         </div>
         <div class="w3l_header_right1">
-            <h2><a ui-sref="#">Liên hệ</a></h2>
+            <h2><a ui-sref="#">Contact</a></h2>
         </div>
         <div class="clearfix"> </div>
     </div>

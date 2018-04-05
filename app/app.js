@@ -1,1 +1,1 @@
-let app = angular.module('meanApp', ['ui.router']);
+let app = angular.module('meanApp', ['angularModalService','ui.router','shopList','shopItem']);

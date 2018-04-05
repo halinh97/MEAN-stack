@@ -1,29 +1,23 @@
-<style>
-    .todoitem {
-        margin-bottom: 1em;
-    }
-    .todo-title {
-        padding: 0.5em 1em;
-        background-color: #e0e0e0;
-        border: 1px solid #888;
-    }
-    .todo-body {
-        padding: 0.5em 1em;
-        background-color: #f0f0f0;
-        border: 1px solid #888;
-        border-top: none;
-    }
-</style>
-
-<div class='todoitem'>
-  <div class='todo-title'>
-    <span>{{$ctrl.taskname}}</span>
-    <button class='close'>&times;</button>
-  </div>
-  <div class='todo-body'>
-    <p>Time: <span>{{$ctrl.tasktime}}</span></p>
-    <p>Location: <span>{{$ctrl.tasklocation}}</span></p>
-    <p>Note: <span>{{$ctrl.tasknote}}</span></p>
+<div class="col-md-3 w3ls_w3l_banner_left w3ls_w3l_banner_left_asdfdfd agile_top_brands_grids">
+  <div class="hover14 column">
+    <div class="agile_top_brand_left_grid w3l_agile_top_brand_left_grid">
+      <div class="tag"><img src="{{$ctrl.tag}}" alt=" " class="img-responsive"></div>
+      <div class="agile_top_brand_left_grid1">
+        <figure>
+          <div class="snipcart-item block">
+            <div class="snipcart-thumb">
+              <a ui-sref=""><img src="{{$ctrl.img}}" alt=" " class="img-responsive" /></a>
+              <p>{{$ctrl.name}}</p>
+              <h4>{{$ctrl.calo}} Calo</h4>
+              <h4>{{$ctrl.id}}</h4>
+            </div>
+            <div class="snipcart-details">
+              <input type="button"value="Thêm vào thực đơn" ng-click="addShop($ctrl.id)"class="button" />
+              </form>
+            </div>
+          </div>
+        </figure>
+      </div>
+    </div>
   </div>
 </div>
-
