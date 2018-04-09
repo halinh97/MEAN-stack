@@ -2,7 +2,7 @@
       <div class="col-sm-offset-1 col-sm-5">
         <ul class="breadcrumb" style="background: #fff;margin-bottom:0">
            <li ><a style="color: black";><span class="glyphicon glyphicon-home"></span>  Home</a></li>
-           <li><a style="color: black">Healthy every day</a></li>
+           <li><a style="color: black">{{title}}</a></li>
         </ul>
       </div>
           <div class="col-sm-6">
@@ -29,12 +29,12 @@
                <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="bs-megadropdown-tabs">
                     <ul class="nav navbar-nav nav_1">
-                      <li><a ui-sref="home.healthy-every-day">Healthy every day</a></li>
-                      <li><a ui-sref="home.nutrition">Nutrition</a></li>
-                      <li><a ui-sref="home.healthy-every-day">Nutrition for the elderly</a></li>
-                      <li><a ui-sref="home.healthy-every-day">Nutrition for dieters</a></li>
-                      <li><a ui-sref="home.healthy-every-day">You probably do not know</a></li>
-                      <li><a ui-sref="home.add-product">Add product</a></li>
+                      <li ng-click="clickB(menu[0].name)"><a ui-sref="home.healthy-every-day">{{menu[0].name}}</a></li>
+                      <li ng-click="clickB(menu[1].name)"><a ui-sref="home.nutrition">{{menu[1].name}}</a></li>
+                      <li ng-click="clickB(menu[2].name)"><a ui-sref="home.healthy-every-day">{{menu[2].name}}</a></li>
+                      <li ng-click="clickB(menu[3].name)"><a ui-sref="home.healthy-every-day">{{menu[3].name}}</a></li>
+                      <li ng-click="clickB(menu[4].name)"><a ui-sref="home.healthy-every-day">{{menu[4].name}}</a></li>
+                      <li ng-click="clickB(menu[5].name)"><a ui-sref="home.add-product">{{menu[5].name}}</a></li>
                     </ul>
                  </div>
             </nav>

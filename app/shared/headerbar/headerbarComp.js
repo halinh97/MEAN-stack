@@ -1,7 +1,9 @@
-function Controller($http, $scope,shareData){
+function Controller($http, $scope,DialogService){
     let self = this;
     self.showModal = function(){
-      $scope.listadd = shareData.getData();
+      console.log('show modal');
+      DialogService.newCart();
+
    }
 
 }

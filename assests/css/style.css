@@ -1,9 +1,6 @@
-/*--
-Author: W3layouts
-Author URL: http://w3layouts.com
-License: Creative Commons Attribution 3.0 Unported
-License URL: http://creativecommons.org/licenses/by/3.0/
---*/
+
+.pointer {cursor: pointer;}
+.url {cursor: url(myBall.cur),auto;}
 html, body{
     font-size: 100%;
 	font-family: 'Open Sans', sans-serif;
@@ -1654,12 +1651,11 @@ section#tables  p {
 	background-color: #ffffff;
 }
 .table td, .table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th {
-	padding: 15px!important;
+	padding: 6px!important;
 }
 .table > thead > tr > th, .table > tbody > tr > th, .table > tfoot > tr > th, .table > thead > tr > td, .table > tbody > tr > td, .table > tfoot > tr > td {
 	font-size: 0.9em;
-	color: #999;
-	border-top: none !important;
+
 }
 .tab-content > .active {
 	display: block;
@@ -2884,7 +2880,7 @@ input.checkbox:checked:after {
 	}
 	.w3l_banner_nav_right_banner1, .w3l_banner_nav_right_banner, .w3l_banner_nav_right_banner2 {
 		padding: 7em 13em 0 0;
-		min-height: 375px;
+		min-height: 350px;
 	}
 	.more {
 		margin-left: 51em;
