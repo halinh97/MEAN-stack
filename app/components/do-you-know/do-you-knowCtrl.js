@@ -2,7 +2,7 @@
   <div class="w3l_banner_nav_right_banner3_btm">
     <div class="col-md-4 w3l_banner_nav_right_banner3_btml">
       <div class="view view-tenth">
-        <img src="../assests/images/18.jpg" alt=" " class="img-responsive" />
+        <img src="images/18.jpg" alt=" " class="img-responsive" />
         <div class="mask">
           <h4>Grocery Store</h4>
           <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt.</p>
@@ -17,7 +17,7 @@
     </div>
     <div class="col-md-4 w3l_banner_nav_right_banner3_btml">
       <div class="view view-tenth">
-        <img src="../assests/images/19.jpg" alt=" " class="img-responsive" />
+        <img src="images/19.jpg" alt=" " class="img-responsive" />
         <div class="mask">
           <h4>Grocery Store</h4>
           <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt.</p>
@@ -32,7 +32,7 @@
     </div>
     <div class="col-md-4 w3l_banner_nav_right_banner3_btml">
       <div class="view view-tenth">
-        <img src="../assests/images/20.jpg" alt=" " class="img-responsive" />
+        <img src="images/20.jpg" alt=" " class="img-responsive" />
         <div class="mask">
           <h4>Grocery Store</h4>
           <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt.</p>

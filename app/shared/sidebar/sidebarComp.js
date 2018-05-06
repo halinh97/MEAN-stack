@@ -19,14 +19,17 @@ function Controller($scope) {
       "name": "Nutrition for the elderly",
       "id": 3
     }, {
-      "name": "Nutrition for dieters",
+      "name": "Nutrition for olders",
       "id": 4
     }, {
-      "name": "You probably do not know",
+      "name": "Weight Gain",
       "id": 5
     }, {
-      "name": "Add product",
+      "name": "Weight Loss",
       "id": 6
+    }, {
+      "name": "You probably do not know",
+      "id": 7
     }]
   $scope.clickB=function (i) {
     $scope.title = i;
