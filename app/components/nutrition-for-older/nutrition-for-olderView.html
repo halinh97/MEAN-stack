@@ -1,17 +1,14 @@
 <div class="w3l_banner_nav_right"></div>  
   <div class="w3l_banner_nav_right_banner3_btm">
-    <div class="col-md-4 w3l_banner_nav_right_banner3_btml">
+    <div class="col-md-4 w3l_banner_nav_right_banner3_btml" ng-repeat='data in data'>
       <div class="view view-tenth">
-        <img src="../assests/images/18.jpg" alt=" " class="img-responsive" />
+        <img src="{{data.img}}" alt=" " class="img-responsive" />
         <div class="mask">
-          <h4>Grocery Store</h4>
           <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt.</p>
         </div>
       </div>
-      <h4>Cách chọn sữa dành cho người lớn tuổi</h4>
-      <ol>
-        <li>Khi bạn bị bệnh thoái hóa cột sống thắt lưng, hãy bổ sung vào thực đơn hàng ngày của bạn những loại thực phẩm sau để tránh gặp các bệnh về xương khớp ở mức độ tốt nhất có thể. Thoái hóa cột sống thắt lưng...</li>
-      </ol>
+      <h4>{{data.tittle}}</h4>
+      <p>{{data.note}}</p>
     </div>
     <div class="clearfix"> </div>
   </div>

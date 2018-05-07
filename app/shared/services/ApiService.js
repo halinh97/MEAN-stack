@@ -42,6 +42,11 @@ function ApiService ($http, $window) {
         product: product,
         defaultImage: defaultImage,
         getProduct:getProduct,
-        getPostDoYouKnow:getPostDoYouKnow
+        getPostDoYouKnow:getPostDoYouKnow,
+        getNutrition:getNutrition,
+        getNutritionForElder:getNutritionForElder,
+        getNutritionForOlder:getNutritionForOlder,
+        getWeightGain:getWeightGain,
+        getWeightLoss:getWeightLoss
     }
 }

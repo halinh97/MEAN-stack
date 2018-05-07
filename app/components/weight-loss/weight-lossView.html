@@ -1,18 +1,14 @@
 <div class="w3l_banner_nav_right"></div>  
   <div class="w3l_banner_nav_right_banner3_btm">
-    <div class="col-md-4 w3l_banner_nav_right_banner3_btml">
+    <div class="col-md-4 w3l_banner_nav_right_banner3_btml" ng-repeat='data in data'>
       <div class="view view-tenth">
-        <img src="../assests/images/18.jpg" alt=" " class="img-responsive" />
+        <img src="{{data.img}}" alt=" " class="img-responsive" />
         <div class="mask">
-          <h4>Grocery Store</h4>
           <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt.</p>
         </div>
       </div>
-      <h4>Thứ 2 – Ngày của hoa quả</h4>
-      <ol>
-        <li>Ngày đầu tuần sẽ thật nhẹ nhàng với những ai là tín đồ của các loại trái cây, hoa quả. Thực đơn khởi đầu chỉ toàn trái cây. Hãy ăn chúng không giới hạn về số lượng và vào bất cứ thời điểm nào trong ngày mỗi khi bạn thấy đói! Trái cây vừa mang đến một lượng calo nhất định, vừa cung cấp nhiều chất xơ – một “trợ thủ đắc lực” cho hệ tiêu hóa, khởi động quá trình đào thải mỡ thừa suôn sẻ. Tuy nhiên, bạn cần tuyệt đối nói “không” với chuối, mít, sầu riêng và bất kỳ loại đồ ăn nào khác. Nếu được hãy “kết thân” với dưa hấu hoặc dưa vàng. GM gợi ý bạn nên uống 8 – 10 cốc nước trong ngày để đảm bảo quá trình thanh lọc cơ thể thuận lợi.</li>
-        
-      </ol>
+      <h4>{{data.tittle}}</h4>
+      <p>{{data.note}}</p>
     </div>
     <div class="clearfix"> </div>
   </div>
