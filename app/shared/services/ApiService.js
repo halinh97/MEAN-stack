@@ -5,6 +5,30 @@ function ApiService ($http, $window) {
         return $http.get('/api/products', {
         });
     }
+    var getPostDoYouKnow = function() {
+        return $http.get('/api/do-you-know', {
+        });
+    }
+    var getNutrition = function() {
+        return $http.get('/api/nutrition', {
+        });
+    }
+    var getNutritionForElder = function() {
+        return $http.get('/api/nutrition-for-elder', {
+        });
+    }
+    var getNutritionForOlder = function() {
+        return $http.get('/api/nutrition-for-older', {
+        });
+    }
+    var getWeightGain = function() {
+        return $http.get('/api/weight-gain', {
+        });
+    }
+    var getWeightLoss = function() {
+        return $http.get('/api/weight-loss', {
+        });
+    }
     var getuser =  function(){
         return  $http.post('/api/user/login', {
         });
@@ -17,6 +41,7 @@ function ApiService ($http, $window) {
         listProducts: listProducts,
         product: product,
         defaultImage: defaultImage,
-        getProduct:getProduct
+        getProduct:getProduct,
+        getPostDoYouKnow:getPostDoYouKnow
     }
 }

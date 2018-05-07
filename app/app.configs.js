@@ -35,7 +35,7 @@ app.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
             views: {
                 "": {
                     templateUrl: 'app/components/nutrition-for-elder/nutrition-for-elderView.html',
-                    controller: 'nutrition-for-elder-Ctrl'
+                    controller: 'nutrition-for-elderCtrl'
                 }
             }
 
