@@ -4,8 +4,7 @@ app.controller('do-you-knowCtrl', function($scope, $http, apiService) {
   
   apiService.getPostDoYouKnow()
     .then(function(product) {
+      $scope.data = product.data;
       console.log('product', product);
-     
     })
-
 });

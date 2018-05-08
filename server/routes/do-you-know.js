@@ -46,12 +46,12 @@
   
     router.put('/:_id', (req, res) => {
       var id = req.params._id;
-      var PostDoYouKnow = req.body;
-      postDoYouKnow.updatePostDoYouKnow(id, PostDoYouKnow, {}, (err, PostDoYouKnow) => {
+      var PostDoYouKnows = req.body;
+      postDoYouKnow.updatePostDoYouKnow(id, PostDoYouKnows, {}, (err, PostDoYouKnows) => {
         if (err) {
           throw err;
         }
-        res.json(PostDoYouKnow);
+        res.json(PostDoYouKnows);
       });
     });
   

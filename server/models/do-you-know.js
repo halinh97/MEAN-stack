@@ -13,8 +13,8 @@ var postDoYouKnowData = new Schema({
 			required: true
     },
     img: {
-			type: String,
-			required: true
+			type: String
+			// required: true
 	},
     create_date : {
     	type: Date,

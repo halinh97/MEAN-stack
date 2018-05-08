@@ -9,6 +9,9 @@ function ApiService ($http, $window) {
         return $http.get('/api/do-you-know', {
         });
     }
+    var addPostDoYouKnow = function(data) {
+        return $http.post('/api/do-you-know',data);
+    }
     var getNutrition = function() {
         return $http.get('/api/nutrition', {
         });
@@ -47,6 +50,7 @@ function ApiService ($http, $window) {
         getNutritionForElder:getNutritionForElder,
         getNutritionForOlder:getNutritionForOlder,
         getWeightGain:getWeightGain,
-        getWeightLoss:getWeightLoss
+        getWeightLoss:getWeightLoss,
+        addPostDoYouKnow:addPostDoYouKnow
     }
 }

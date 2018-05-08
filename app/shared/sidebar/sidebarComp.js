@@ -13,23 +13,20 @@ function Controller($scope) {
       "name": "Healthy every day",
       "id": "1"
     },{
-      "name": "Nutrition",
+      "name": "Nutrition for baby",
       "id": 2
     }, {
-      "name": "Nutrition for the elderly",
+      "name": "Nutrition for olders",
       "id": 3
     }, {
-      "name": "Nutrition for olders",
+      "name": "Weight Gain",
       "id": 4
     }, {
-      "name": "Weight Gain",
+      "name": "Weight Loss",
       "id": 5
     }, {
-      "name": "Weight Loss",
-      "id": 6
-    }, {
       "name": "You probably do not know",
-      "id": 7
+      "id": 6
     }]
   $scope.clickB=function (i) {
     $scope.title = i;
