@@ -3,7 +3,7 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
-var productsWeightGainData = new Schema({
+var productsForOlderData = new Schema({
     name:  {
             type: String,
             required: true
@@ -31,21 +31,21 @@ var productsWeightGainData = new Schema({
     }
 });
 
-var productsWeightGain = module.exports = mongoose.model('products_weight_gain', productsWeightGainData);
+var productsForOlder = module.exports = mongoose.model('products_for_older', productsForOlderData);
 
-module.exports.getProductWeightGain = (callback, limit) => {
-	productsWeightGain.find(callback).limit(limit);
+module.exports.getProductForOlder = (callback, limit) => {
+	productsForOlder.find(callback).limit(limit);
 }
 
-module.exports.getProductWeightGainById = (id, callback) => {
-	productsWeightGain.findById(id, callback);
+module.exports.getProductForOlderById = (id, callback) => {
+	productsForOlder.findById(id, callback);
 }
 
-module.exports.addWeightGain = (product, callback) => {
-	productsWeightGain.create(product, callback);
+module.exports.addForOlder = (product, callback) => {
+	productsForOlder.create(product, callback);
 }
 
-module.exports.updateproductsWeightGain = (id, product, options, callback) => {
+module.exports.updateproductsForOlder = (id, product, options, callback) => {
 	var query = {_id: id};
 	var update = {
 		name: product.name,
@@ -54,11 +54,11 @@ module.exports.updateproductsWeightGain = (id, product, options, callback) => {
 		tag: product.tag,
 		calo: product.calo
 	}
-	productsWeightGain.findOneAndUpdate(query, update, options, callback);
+	productsForOlder.findOneAndUpdate(query, update, options, callback);
 }
 
-module.exports.removeProductWeightGain = (id, callback) => {
+module.exports.removeProductForOlder = (id, callback) => {
 	var query = {_id: id};
-	productsWeightGain.remove(query, callback);
+	productsForOlder.remove(query, callback);
 }
 //mongoimport --db shops --collection shop --file data.json --jsonArray

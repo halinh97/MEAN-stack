@@ -2,7 +2,7 @@
 	var express = require('express');
     var router = express.Router();
       var bodyParser = require('body-parser');
-    productsWeightGain = require('../models/products-weight-gain');
+    postForElder = require('../models/post-for-elder');
   
       var result = {
           success: {
@@ -15,53 +15,53 @@
       }
   
     router.get('/', (req, res) => {
-      productsWeightGain.getProductsWeightGain((err, productsWeightGain) => {
+      postForElder.getPostForElder((err, postForElder) => {
         if (err) {
                   res.status(555).send(result.fail);
                   res.end();
         }
-        res.json(productsWeightGain);
+        res.json(postForElder);
               res.end();
       });
     });
   
     router.get('/:_id', (req, res) => {
-      productsWeightGain.getProductsWeightGainById(req.params._id, (err, productsWeightGain) => {
+      postForElder.getPostForElderById(req.params._id, (err, postForElder) => {
         if (err) {
           throw err;
         }
-        res.json(productsWeightGain);
+        res.json(postForElder);
       });
     });
   
     router.post('/', (req, res) => {
-      var product = req.body;
-      productsWeightGain.addProductsWeightGain(product, (err, product) => {
+      var PostForElder = req.body;
+      postForElder.addPostForElder(PostForElder, (err, PostForElder) => {
         if (err) {
           throw err;
         }
-        res.json(product);
+        res.json(PostForElder);
       });
     });
   
     router.put('/:_id', (req, res) => {
       var id = req.params._id;
-      var product = req.body;
-      productsWeightGain.updateProductsWeightGain(id, product, {}, (err, product) => {
+      var PostForElder = req.body;
+      postForElder.updatePostForElder(id, PostForElder, {}, (err, PostForElder) => {
         if (err) {
           throw err;
         }
-        res.json(product);
+        res.json(PostForElder);
       });
     });
   
     router.delete('/:_id', (req, res) => {
       var id = req.params._id;
-      productsWeightGain.removeBook(id, (err, product) => {
+      postForElder.removeBook(id, (err, PostForElder) => {
         if (err) {
           throw err;
         }
-        res.json(product);
+        res.json(PostForElder);
       });
     });
       module.exports = router;

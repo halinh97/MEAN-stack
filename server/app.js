@@ -12,22 +12,30 @@ app.use(bodyParser.json());
 
 var product = require('./routes/product');
 var postDoYouKnow = require('./routes/do-you-know');
-var nutrion = require('./routes/nutrition');
-var nutrionForElder = require('./routes/nutrition-for-elder');
-var nutrionForOlder = require('./routes/nutrition-for-older');
-var weightGain = require('./routes/weight-gain');
-var weightLoss = require('./routes/weight-loss');
+// var nutrion = require('./routes/nutrition');
+var postForElder = require('./routes/post-for-elder');
+var postForOlder = require('./routes/post-for-older');
+var postWeightGain = require('./routes/post-weight-gain');
+var postWeightLoss = require('./routes/post-weight-loss');
+var productsForElder = require('./routes/products-for-elder');
+var productsForOlder = require('./routes/products-for-older');
+var productsWeightGain = require('./routes/products-weight-gain');
+var productsWeightLoss = require('./routes/products-weight-loss');
 var user = require('./routes/user');
 var index = require('./routes/index');
 
 app.use('/', index);
 app.use('/api/products', product);
 app.use('/api/do-you-know', postDoYouKnow);
-app.use('/api/nutrition', nutrition);
-app.use('/api/nutrition-for-elder', nutritionForElder);
-app.use('/api/nutrition-for-older', nutritionForOlder);
-app.use('/api/weight-gain', weightGain);
-app.use('/api/nutrition-loss', weightLoss);
+// app.use('/api/nutrition', nutrition);
+app.use('/api/nutrition-for-elder', postForElder);
+app.use('/api/nutrition-for-older', postForOlder);
+app.use('/api/weight-gain', postWeightGain);
+app.use('/api/weight-loss', postWeightLoss);
+app.use('/api/nutrition-for-elder', productsForElder);
+app.use('/api/nutrition-for-older', productsForOlder);
+app.use('/api/weight-gain', productsWeightGain);
+app.use('/api/weight-loss', productsWeightLoss);
 app.use('/api/user', user);
 
 

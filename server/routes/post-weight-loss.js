@@ -2,7 +2,7 @@
 	var express = require('express');
     var router = express.Router();
       var bodyParser = require('body-parser');
-    productsWeightGain = require('../models/products-weight-gain');
+    postWeightLoss = require('../models/post-weight-loss');
   
       var result = {
           success: {
@@ -15,53 +15,53 @@
       }
   
     router.get('/', (req, res) => {
-      productsWeightGain.getProductsWeightGain((err, productsWeightGain) => {
+      postWeightLoss.getPostWeightLoss((err, postWeightLoss) => {
         if (err) {
                   res.status(555).send(result.fail);
                   res.end();
         }
-        res.json(productsWeightGain);
+        res.json(postWeightLoss);
               res.end();
       });
     });
   
     router.get('/:_id', (req, res) => {
-      productsWeightGain.getProductsWeightGainById(req.params._id, (err, productsWeightGain) => {
+      postWeightLoss.getPostWeightLossById(req.params._id, (err, postWeightLoss) => {
         if (err) {
           throw err;
         }
-        res.json(productsWeightGain);
+        res.json(postWeightLoss);
       });
     });
   
     router.post('/', (req, res) => {
-      var product = req.body;
-      productsWeightGain.addProductsWeightGain(product, (err, product) => {
+      var PostWeightLoss = req.body;
+      postWeightLoss.addPostWeightLoss(PostWeightLoss, (err, PostWeightLoss) => {
         if (err) {
           throw err;
         }
-        res.json(product);
+        res.json(PostWeightLoss);
       });
     });
   
     router.put('/:_id', (req, res) => {
       var id = req.params._id;
-      var product = req.body;
-      productsWeightGain.updateProductsWeightGain(id, product, {}, (err, product) => {
+      var PostWeightLoss = req.body;
+      postWeightLoss.updatePostWeightLoss(id, PostWeightLoss, {}, (err, PostWeightLoss) => {
         if (err) {
           throw err;
         }
-        res.json(product);
+        res.json(PostWeightLoss);
       });
     });
   
     router.delete('/:_id', (req, res) => {
       var id = req.params._id;
-      productsWeightGain.removeBook(id, (err, product) => {
+      postWeightLoss.removeBook(id, (err, PostWeightLoss) => {
         if (err) {
           throw err;
         }
-        res.json(product);
+        res.json(PostWeightLoss);
       });
     });
       module.exports = router;

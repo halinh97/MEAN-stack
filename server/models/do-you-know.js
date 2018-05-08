@@ -5,20 +5,20 @@ var Schema = mongoose.Schema;
 
 var postDoYouKnowData = new Schema({
     tittle: {
-		type: String,
-		required: true
+			type: String,
+			required: true
     },
     note: {
-        type: String,
-		required: true
+      type: String,
+			required: true
     },
     img: {
-		type: String,
-		required: true
+			type: String,
+			required: true
 	},
     create_date : {
-    type: Date,
-    default: Date.now
+    	type: Date,
+    	default: Date.now
   }
 });
 
