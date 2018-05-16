@@ -1,20 +1,34 @@
-let app = angular.module('meanApp', ['angularModalService','ui.router','shopList','shopItem']);
-app.controller('login', function($http){
-    
-    $http({
-        method: 'POST',
-        url: '/api/user/register',
-        data: {username: 'du', password: 'duc'},
-        json: true
-    }).then(function(res) {
-        console.log(res);
-        $http({
-            method: 'POST',
-            url: '/api/user/login',
-            data: res.data,
-            json:true
-        }).then(function(res) {console.log(res)})
-        .catch(function(err) {console.log(err);});
-    })
-    .catch(function(err) {console.log(err);});
-});
+let app = angular.module('meanApp', ['angularModalService','ui.router','shopList','shopItem','ngCookies','cp.ngConfirm','ngRoute', 'ngFileUpload','datatables','ngResource','ngJsonExportExcel']);
+app.run(run);
+run.$inject = ['$rootScope', '$location', '$cookies', '$http', '$state','$stateParams','DialogService','AuthService','$cookieStore'];
+function run($rootScope, $location, $cookies, $http, $state,$stateParams,DialogService,AuthService,$cookieStore) {
+    $rootScope.globals = $cookieStore.get('currentUser') || {};
+    $rootScope.$on('$locationChangeStart', function (event, next, current,toState) {
+        if ($state.current.access == false && AuthService.isLoggedIn() == false) {
+            $state.go('home');
+            $location.path('/');
+            DialogService.login();
+        }
+        // $('div').remove('.modal-backdrop');
+        var loggedIn = $rootScope.globals;
+    });
+}
+
+// app.config(['$provide', '$httpProvider', function($provide, $httpProvider) {
+//
+//                 $provide.factory('unauthorisedInterceptor', ['$q', '$cookies',
+//                     function($q, $cookies) {
+//                         return {
+//                             'responseError': function(rejection) {
+//                                 if (rejection.status === 401) {
+//                                     $cookies.remove('globals');
+//                                     window.location.href = '/login';
+//                                 }
+//
+//                                 return $q.reject(rejection);
+//                             }
+//                         };
+//                     }
+//                 ]);
+//     $httpProvider.interceptors.push('unauthorisedInterceptor');
+// }])

@@ -30,28 +30,32 @@
 <!-- top-brands -->
 <div class="top-brands">
   <div class="container">
-    <!-- <shop-list></shop-list> -->
-     <div class="col-md-3 w3ls_w3l_banner_left w3ls_w3l_banner_left_asdfdfd agile_top_brands_grids" ng-repeat='data in data'>
-       <div class="hover14 column">
-         <div class="agile_top_brand_left_grid w3l_agile_top_brand_left_grid">
-           <div class="tag"><img src="{{data.tag}}" alt=" " class="img-responsive"></div>
-           <div class="agile_top_brand_left_grid1">
-             <figure>
-               <div class="snipcart-item block">
-                 <div class="snipcart-thumb">
-                   <a ui-sref=""><img src="{{data.img}}" alt=" " class="img-responsive" /></a>
-                   <p>{{data.name}}</p>
-                   <h4>{{data.calo}} Calo</h4>
-                 </div>
-                 <div class="snipcart-details">
-                   <input type="button"value="ADD TO MENU" ng-click="addShop(data._id)"class="button" />
-                 </div>
-               </div>
-             </figure>
-           </div>
-         </div>
-       </div>
-     </div>
+
+    <div class="w3ls_w3l_banner_nav_right_grid1 w3ls_w3l_banner_nav_right_grid1_veg">
+      <div ng-repeat='data in data' class="">
+        <div ng-class="{{$index+1}} % 2 == 0 ? 'col-md-3 w3ls_w3l_banner_left w3ls_w3l_banner_left_asdfdfd agile_top_brands_grids': 'col-md-3 w3ls_w3l_banner_left agile_top_brands_grids'">
+          <div class="hover14 column">
+            <div class="agile_top_brand_left_grid w3l_agile_top_brand_left_grid">
+              <div class="tag"><img src="{{data.tag}}" alt=" " class="img-responsive"></div>
+              <div class="agile_top_brand_left_grid1">
+                <figure>
+                  <div class="snipcart-item block">
+                    <div class="snipcart-thumb">
+                      <a ui-sref=""><img src="{{data.img}}" alt=" " class="img-responsive" /></a>
+                      <p>{{data.name}}</p>
+                      <h4>{{data.calo}} Calo</h4>
+                    </div>
+                    <div class="snipcart-details">
+                      <input type="button" value="ADD TO MENU" ng-click="addShop(data._id)" class="button" />
+                    </div>
+                  </div>
+                </figure>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
   <!-- //top-brands -->
   <!-- fresh-vegetables -->

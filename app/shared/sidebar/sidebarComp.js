@@ -27,6 +27,9 @@ function Controller($scope) {
     }, {
       "name": "You probably do not know",
       "id": 6
+    }, {
+      "name": "My Product",
+      "id": 7
     }]
   $scope.clickB=function (i) {
     $scope.title = i;

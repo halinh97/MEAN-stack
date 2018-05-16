@@ -6,4 +6,5 @@ app.service('shareData',function () {
   this.setData = function (t) {
     this.data = t;
   }
+  this.userlog =[];
 })

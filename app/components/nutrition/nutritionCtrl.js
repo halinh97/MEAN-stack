@@ -25,7 +25,13 @@ $scope.add = function () {
       // window.location='/';
 		});
 	}
-
+	$http.get('/api/productUsers/:'+ self.productUsers.idUser)
+	.then(function(data){
+		console.log(data,"getProductUserById");
+	})
+	.catch(function(data){
+		console.log(data,"loi get");
+	})
 	// $scope.updateProduct = function(){
 	// 	var id = $routeParams.id;
 	// 	$http.put('/api/products/'+id, $scope.product).success(function(response){

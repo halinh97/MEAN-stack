@@ -1,50 +1,75 @@
 var express = require('express');
+var logger = require('morgan');
+var cookieParser = require('cookie-parser');
 var app = express();
 var bodyParser = require('body-parser');
+var expressSession = require('express-session');
 var mongoose = require('mongoose');
+var hash = require('bcrypt-nodejs');
 var path = require('path');
-
-
-products = require('./models/products');
-users = require('./models/users');
-app.use(express.static(path.join(__dirname, '../')));
-app.use(bodyParser.json());
-
-var product = require('./routes/product');
-var postDoYouKnow = require('./routes/do-you-know');
-// var nutrion = require('./routes/nutrition');
-var postForElder = require('./routes/post-for-elder');
-var postForOlder = require('./routes/post-for-older');
-var postWeightGain = require('./routes/post-weight-gain');
-var postWeightLoss = require('./routes/post-weight-loss');
-var productsForElder = require('./routes/products-for-elder');
-var productsForOlder = require('./routes/products-for-older');
-var productsWeightGain = require('./routes/products-weight-gain');
-var productsWeightLoss = require('./routes/products-weight-loss');
-var user = require('./routes/user');
-var index = require('./routes/index');
-
-app.use('/', index);
-app.use('/api/products', product);
-app.use('/api/do-you-know', postDoYouKnow);
-// app.use('/api/nutrition', nutrition);
-app.use('/api/nutrition-for-elder', postForElder);
-app.use('/api/nutrition-for-older', postForOlder);
-app.use('/api/weight-gain', postWeightGain);
-app.use('/api/weight-loss', postWeightLoss);
-app.use('/api/nutrition-for-elder', productsForElder);
-app.use('/api/nutrition-for-older', productsForOlder);
-app.use('/api/weight-gain', productsWeightGain);
-app.use('/api/weight-loss', productsWeightLoss);
-app.use('/api/user', user);
-
+var passport = require('passport');
+var localStrategy = require('passport-local').Strategy;
+var debug = require('debug')('passport-mongo');
+var formidable = require('formidable');
 
 mongoose.connect('mongodb://localhost/shops');
+// mongoose.connect('mongodb://meanstack:meanstack@ds014648.mlab.com:14648/meanstack');
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'DB connection error: '));
 db.once('open', function() {
   console.log('DB connection success! ');
 });
-app.listen(4000);
-console.log('Running on port 4000...');
+
+var products = require('./models/products');
+var user = require('./models/user');
+var productUser = require('./models/productUsers');
+
+
+
+
+// BodyParser Middleware
+app.use(logger('dev'));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
+///cookie
+app.use(cookieParser());
+app.use(require('express-session')({
+    secret: 'keyboard cat',
+    resave: false,
+    saveUninitialized: false
+}));
+
+app.use(express.static(path.join(__dirname, '../')));
+
+// configure passport
+app.use(passport.initialize());
+app.use(passport.session());
+passport.use(new localStrategy(user.authenticate()));
+passport.serializeUser(user.serializeUser());
+passport.deserializeUser(user.deserializeUser());
+
+var index = require('./routes/index');
+var product = require('./routes/product');
+var productUsers = require('./routes/productUsers');
+var users = require('./routes/users');
+var uploadRoutesApi = require('./routes/upload');
+var postProduct = require('./routes/postProduct');
+
+
+app.use('/', index);
+app.use('/api/user', users);
+app.use('/api/products', product);
+app.use('/api/productUsers', productUsers);
+app.use('/upload', uploadRoutesApi);
+app.use('/api/postproduct', postProduct);
+
+
+
+// app.listen(3000);
+// console.log('Running on port 3000...');
+
+app.set('port', process.env.PORT || 3000);
+var server = app.listen(app.get('port'), function() {
+  debug('Express server listening on port ' + server.address().port);
+});
 module.exports = app;
